@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Hero from './Pages/Hero'
+import About from './Pages/About'
 
 const App=() =>{
   return (
@@ -12,7 +13,10 @@ const App=() =>{
         <Routes>
           <Route
             path='/'
-            element={<Hero />}
+            element={<>
+            <Hero />
+            <About />
+            </>}
           />
         </Routes>
       </div>

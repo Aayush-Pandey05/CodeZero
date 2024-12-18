@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { large, small } from "../utils";
+import { large, small, middle } from "../utils";
 
 const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(
-    window.innerWidth < 760 ? small : large
+    window.innerWidth <= 1024 ? (window.innerWidth < 760 ? small : middle) : large
   );
 
   const resizeHandler = () => {
     if (window.innerWidth < 760) {
       setVideoSrc(small);
-    } else {
+    } else if(window.innerWidth<=1024){
+      setVideoSrc(middle);
+    }
+    else{
       setVideoSrc(large);
     }
   };
